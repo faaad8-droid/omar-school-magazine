@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#3429a7" />
+<meta name="description" content="مجلة التوجيه الطلابي الإلكترونية، متوسطة عمر بن أبي سلمة، العدد الأول 1448هـ" />
+<title>مجلة التوجيه الطلابي | متوسطة عمر بن أبي سلمة | العدد الأول</title>
+<style>
+:root{--ink:#152347;--ink2:#405276;--muted:#647292;--indigo:#4934d4;--purple:#7657f5;--cyan:#07bfc5;--mint:#1cd49f;--pink:#ff668d;--orange:#ff984e;--yellow:#ffd15a;--paper:#f5f7ff;--white:#fff;--line:#e5eaf7;--shadow:0 16px 44px rgba(29,44,111,.10)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,"Segoe UI",sans-serif;line-height:1.9;overflow-x:hidden}
+button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible{outline:3px solid #ffaf53;outline-offset:3px}::selection{background:#dbd4ff}
+#readProgress{position:fixed;top:0;right:0;z-index:100;height:4px;width:0;background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow));transition:width .12s}
+.container{width:min(1160px,calc(100% - 44px));margin-inline:auto}
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.91);backdrop-filter:blur(20px);border-bottom:1px solid #e9eaf5;box-shadow:0 5px 20px #24306b08}
+.top .container{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;white-space:nowrap}
+.logo-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:15px;color:white;background:linear-gradient(140deg,var(--indigo),var(--pink));box-shadow:0 7px 18px #7464e94a;font-size:23px}
+.nav{display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+.nav a{border-radius:12px;padding:8px 11px;color:#53617f;font-weight:700;font-size:13px;transition:.2s}
+.nav a:hover,.nav a.active{background:#efecff;color:var(--indigo)}
+.top .mini-action{border:0;background:#1b2755;color:white;border-radius:12px;padding:8px 14px;font-weight:800;font-size:13px;white-space:nowrap}
+.hero{position:relative;min-height:580px;overflow:hidden;isolation:isolate;background:linear-gradient(118deg,#3024a7 0%,#5b3dd7 40%,#354dc7 74%,#018fa9 100%);color:white}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-210px;top:-280px;background:radial-gradient(circle,#ffffff32,transparent 70%);z-index:-1}
+.hero:after{content:"";position:absolute;width:570px;height:570px;border-radius:50%;left:-260px;bottom:-370px;background:radial-gradient(circle,#21e4cb70,transparent 73%);z-index:-1}
+.hero-layout{min-height:580px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:30px;position:relative;padding-block:60px 74px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid #ffffff6b;background:#ffffff22;border-radius:999px;font-weight:800;font-size:13px;color:#fffad8}
+.hero-title{font-size:clamp(43px,5.2vw,76px);line-height:1.29;margin:22px 0 10px;letter-spacing:-.7px;font-weight:900;text-shadow:0 6px 26px #21167555}
+.hero-title span{display:block;color:#ffe46c}
+.hero-subtitle{font-size:clamp(18px,2vw,23px);margin:0 0 9px;color:#fff;font-weight:800}
+.hero-desc{font-size:16px;color:#e9edff;max-width:470px;margin:0 0 24px}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:15px;padding:11px 22px;font-weight:900;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-3px)}
+.btn-sun{background:linear-gradient(100deg,#ffe77a,#ffbc50);color:#3c2a27;box-shadow:0 12px 28px #ffca4880}
+.btn-outline{color:white;border:1px solid #ffffff80;background:#ffffff1b}
+.hero-caption{display:flex;align-items:center;gap:12px;margin-top:27px;font-size:13px;color:#dceaff;font-weight:700}
+.hero-caption .dot{width:7px;height:7px;border-radius:50%;background:#a4ffdc}
+.hero-graphic{width:min(100%,515px);margin-inline:auto;filter:drop-shadow(0 28px 34px #16155a44);animation:floatGraphic 5s ease-in-out infinite}
+@keyframes floatGraphic{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.hero-spark{position:absolute;opacity:.7;font-size:30px;pointer-events:none;animation:pulse 3s ease-in-out infinite alternate}
+.hero-spark.one{top:35px;right:52%}.hero-spark.two{bottom:42px;left:2%;animation-delay:1s}.hero-spark.three{right:25%;bottom:38px;animation-delay:.5s}
+@keyframes pulse{from{transform:scale(.9) rotate(-8deg)}to{transform:scale(1.2) rotate(8deg)}}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:42px;fill:var(--paper)}
+.eyebrow{color:var(--indigo);font-weight:900;font-size:13px;letter-spacing:.3px;margin:0 0 8px;display:flex;gap:9px;align-items:center}
+.eyebrow:before{content:"";display:inline-block;width:24px;height:5px;border-radius:4px;background:linear-gradient(90deg,var(--pink),var(--orange))}
+.section{padding:77px 0 16px}
+.section-heading{margin:0;font-size:clamp(27px,3vw,36px);line-height:1.4;font-weight:900}
+.section-sub{max-width:700px;color:var(--muted);font-size:15px;margin:9px 0 30px}
+.stats{position:relative;margin-top:-13px;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.stat{background:#fff;border-radius:19px;padding:22px 14px;box-shadow:var(--shadow);text-align:center;border:1px solid #fff}
+.stat .v{display:block;font-size:31px;line-height:1.3;font-weight:900}
+.stat:nth-child(1) .v{color:var(--indigo)}.stat:nth-child(2) .v{color:var(--pink)}.stat:nth-child(3) .v{color:#008eac}.stat:nth-child(4) .v{color:#dd8233}
+.stat small{font-weight:700;color:#64728d}
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.letter{position:relative;overflow:hidden;border-radius:26px;background:white;border:1px solid var(--line);box-shadow:var(--shadow);padding:32px 32px 26px}
+.letter::before{content:"“";position:absolute;left:22px;top:-57px;color:#f0ecff;font-family:Georgia,serif;font-size:180px;line-height:1;pointer-events:none}
+.letter p{position:relative;color:#42516d;font-size:16px;margin:16px 0 22px}
+.signature{font-size:18px;font-weight:900;color:var(--indigo)}
+.signature small{display:block;font-size:13px;color:#70809a;font-weight:500}
+.editorial-aside{border-radius:26px;padding:28px;background:linear-gradient(150deg,#12bfd2,#5c53e8);color:white;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.editorial-aside:after{content:"★";position:absolute;left:-24px;bottom:-92px;color:#ffffff1f;font-size:270px}
+.editorial-aside .big{font-size:53px;line-height:1.3}.editorial-aside h3{font-size:24px;margin:9px 0}.editorial-aside p{max-width:300px;color:#f2f8ff;position:relative}.note{font-size:12px;color:#75809c;margin-top:12px}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.topic-card{background:white;border:1px solid #e6ebf6;box-shadow:0 14px 30px #303b750c;border-radius:24px;padding:25px;position:relative;overflow:hidden;transition:transform .23s,box-shadow .23s}
+.topic-card:hover{transform:translateY(-6px);box-shadow:0 21px 46px #343d8a1e}
+.topic-card:before{content:"";width:180px;height:180px;border-radius:100%;position:absolute;left:-74px;top:-86px;opacity:.65;pointer-events:none;background:var(--accent-soft)}
+.topic-card .iconbox{width:70px;height:70px;border-radius:22px;background:var(--accent-soft);display:grid;place-items:center;font-size:34px;margin-bottom:13px;position:relative}
+.topic-card .number{color:var(--accent);font-size:12px;font-weight:900}
+.topic-card h3{font-weight:900;font-size:21px;margin:4px 0 7px;position:relative}
+.topic-card p{color:#65718b;font-size:14px;min-height:56px;margin:0 0 15px}
+.topic-card button{border:0;background:var(--accent);color:#fff;padding:8px 17px;border-radius:12px;font-weight:800;font-size:13px}
+.topic-card[data-theme="yellow"]{--accent:#cc8622;--accent-soft:#fff2ce}
+.topic-card[data-theme="blue"]{--accent:#366ce8;--accent-soft:#e2edff}
+.topic-card[data-theme="pink"]{--accent:#dc487e;--accent-soft:#ffe1ee}
+.topic-card[data-theme="teal"]{--accent:#008f95;--accent-soft:#dafaf6}
+.topic-card[data-theme="orange"]{--accent:#d77724;--accent-soft:#fff0dc}
+.topic-card[data-theme="purple"]{--accent:#7353dc;--accent-soft:#eee6ff}
+.programs{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.program{background:white;border-radius:22px;overflow:hidden;border:1px solid #e4eaf6;box-shadow:0 12px 28px #3444770d;transition:transform .2s}
+.program:hover{transform:translateY(-5px)}
+.program-art{height:150px;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--art)}
+.program-art:before,.program-art:after{content:"";position:absolute;border-radius:50%;background:#ffffff44;width:210px;height:210px;top:-120px;right:-90px}
+.program-art:after{width:130px;height:130px;top:auto;right:auto;bottom:-80px;left:-20px}
+.program-art .art-icon{position:relative;font-size:74px;filter:drop-shadow(0 12px 12px #33333325)}
+.program-body{padding:18px}.program-body h3{font-size:17px;font-weight:900;margin:0 0 7px;line-height:1.5}.program-body p{font-size:13px;color:#62718c;line-height:1.8;margin:0}
+.program .chip{display:inline-block;color:#5652c4;background:#efedff;font-size:11px;padding:2px 10px;border-radius:99px;margin-top:12px;font-weight:900}
+.gallery{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px}
+.gallery-card{border-radius:24px;position:relative;overflow:hidden;min-height:245px;display:flex;align-items:flex-end;isolation:isolate;padding:24px;color:#fff;box-shadow:0 14px 26px #3b4c8a12}
+.gallery-card:before{content:"";width:240px;height:240px;position:absolute;z-index:-1;top:-125px;left:-65px;background:#ffffff38;border-radius:50%}
+.gallery-card:after{content:"";width:180px;height:180px;position:absolute;z-index:-1;bottom:-105px;right:-20px;background:#ffffff28;border-radius:50%}
+.gallery-card .illustration{position:absolute;top:10%;left:50%;transform:translateX(-50%);font-size:86px;line-height:1;filter:drop-shadow(0 14px 12px #00000019)}
+.gallery-card strong{display:block;font-size:19px;text-shadow:0 1px 5px #1d2a6e55;position:relative}
+.gallery-card small{color:#fff;position:relative;font-size:12px}
+.gallery-card.a{background:linear-gradient(140deg,#6545e9,#b062f5)}
+.gallery-card.b{background:linear-gradient(140deg,#008ec7,#11d0b4)}
+.gallery-card.c{background:linear-gradient(140deg,#f15c92,#ffaf55)}
+.gallery-foot{display:flex;align-items:flex-start;gap:9px;background:#eaf1ff;color:#44587d;padding:13px 15px;border-radius:14px;font-size:13px;margin-top:15px}
+.challenge{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.challenge-copy{background:linear-gradient(130deg,#472bd0,#814fe3);border-radius:25px;padding:30px;color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.challenge-copy:after{content:"🎯";position:absolute;font-size:135px;left:-24px;bottom:-80px;opacity:.22}
+.challenge-copy h3{font-size:27px;margin:0 0 12px}.challenge-copy p{color:#e9e2ff;max-width:350px}
+.challenge-box{background:white;border:1px solid #e4e9f7;border-radius:25px;padding:28px;box-shadow:var(--shadow)}
+.challenge-options{display:grid;gap:9px}
+.challenge-options button{border:1px solid #e2e9f8;text-align:right;background:#f8faff;padding:11px 14px;border-radius:13px;color:#34476d;font-weight:700}
+.challenge-options button.selected{background:#e8fff5;border-color:#20bb87;color:#087b60}
+#challengeFeedback{margin-top:13px;color:#168565;font-weight:800;min-height:27px;font-size:13px}
+.quiz-zone{background:linear-gradient(120deg,#e9e8ff,#eafaff);border:1px solid #dfdefb;border-radius:30px;padding:25px}
+.quiz-inner{background:white;border-radius:24px;padding:27px;border:1px solid #e9ecf7;box-shadow:0 12px 24px #3e43a50e}
+.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:14px;color:#576581;font-size:13px;font-weight:900}
+.quiz-track{margin-top:14px;height:10px;border-radius:99px;background:#f0edfa;overflow:hidden}
+.quiz-fill{width:20%;height:100%;border-radius:99px;background:linear-gradient(90deg,#7358f7,#21c9c6);transition:width .4s}
+#qTitle{font-size:23px;line-height:1.65;margin:25px 0 17px;font-weight:900}
+.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.answers button{text-align:right;border:1px solid #e5e8f3;background:#f9faff;padding:13px 17px;border-radius:14px;font-weight:700;color:#263860;transition:.16s}
+.answers button:not(:disabled):hover{background:#f0ebff;border-color:#7a5df5;transform:translateY(-2px)}
+.answers button.correct{background:#e6fff2;border-color:#1ab883;color:#056c4e}
+.answers button.wrong{background:#ffeaf0;border-color:#ef5981;color:#a32b55}
+.answers button:disabled{cursor:default}
+#feedback{min-height:40px;margin-top:14px;color:#355179;font-size:14px;font-weight:800}
+#nextBtn{margin-top:10px;background:linear-gradient(90deg,#654cf5,#408fe9);color:white;display:none}
+.result{display:none;text-align:center;padding:12px 4px}
+.result .result-icon{font-size:66px}
+.result h3{font-size:28px;margin:10px 0}.result p{color:#5c6f90}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.team-card{border-radius:24px;padding:25px 27px;background:white;border:1px solid #e7ebf8;box-shadow:var(--shadow)}
+.team-card .role{display:block;font-size:12px;color:#765adb;font-weight:900;margin-bottom:9px}
+.team-card h3{margin:0;font-size:21px;line-height:1.8}
+.team-card .names{display:grid;gap:9px}.team-card .names span{font-size:17px;font-weight:800;color:#273d69;display:flex;align-items:center;gap:8px}.team-card .names span:before{content:"✦";color:var(--cyan)}
+.footer{position:relative;overflow:hidden;margin-top:78px;background:#202b73;color:#fff;padding:43px 0 32px}
+.footer:before{content:"";position:absolute;width:400px;height:400px;left:-150px;top:-230px;border-radius:50%;background:#755ff466}
+.footer-flex{display:flex;justify-content:space-between;align-items:center;gap:22px;position:relative}
+.footer h3{font-size:20px;margin:0}.footer p{color:#d6defd;margin:2px 0 0}.footer small{color:#dce2f9;font-size:12px}
+.footer button{background:#fff;color:#3435a6;border:0;padding:10px 17px;border-radius:12px;font-weight:900}
+.modal-overlay{display:none;position:fixed;inset:0;background:#101834af;z-index:60;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}
+.modal-overlay.open{display:flex}
+.modal{width:min(660px,100%);max-height:min(88vh,770px);overflow:auto;background:#fff;border-radius:25px;box-shadow:0 30px 90px #080b3440;padding:29px;position:relative}
+.modal-close{position:absolute;left:18px;top:16px;border:0;border-radius:12px;background:#f0f1f9;color:#344269;padding:6px 14px;font-weight:900}
+.modal-icon{font-size:43px;background:#f0ebff;display:grid;place-items:center;width:78px;height:78px;border-radius:21px}
+.modal h2{font-size:28px;margin:14px 0}.modal-content{color:#3c5074;font-size:15px}
+.modal-content ul{padding-right:23px}.modal-content li{margin-bottom:9px}.modal-content strong{color:#302d9a}
+@media (max-width:980px){.nav a{padding:6px;font-size:12px}.hero-layout{grid-template-columns:1fr 1fr;gap:8px}.programs{grid-template-columns:repeat(2,1fr)}.topic-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ملف الاستخدام الخاطئ للجوال */
+.phone-section{position:relative}
+.phone-feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:stretch;margin-bottom:19px}
+.phone-visual{min-height:390px;background:linear-gradient(140deg,#3930b5,#7960f5 52%,#20bace);border-radius:27px;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:var(--shadow)}
+.phone-visual:before,.phone-visual:after{content:"";position:absolute;border-radius:50%;background:#ffffff23;width:330px;height:330px;right:-200px;top:-155px}
+.phone-visual:after{width:230px;height:230px;left:-100px;right:auto;top:auto;bottom:-145px}
+.phone-spark{position:absolute;color:#ffdf85;font-size:45px}.phone-spark.a{top:42px;right:16%}.phone-spark.b{bottom:38px;left:12%}
+.phone-device{width:220px;border-radius:33px;background:#17254b;border:7px solid #162242;padding:8px;box-shadow:0 24px 35px #17145c6c;transform:rotate(-5deg);position:relative;z-index:1}
+.phone-speaker{width:65px;height:6px;background:#6b83b1;border-radius:99px;margin:4px auto 9px}
+.phone-screen{border-radius:23px;background:linear-gradient(165deg,#e8faff,#fff1fa);min-height:278px;padding:19px 13px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#273968}
+.phone-symbol{font-size:57px;line-height:1.3}.phone-screen strong{font-size:17px}.phone-screen span{font-size:10px;color:#56668e;line-height:1.6}
+.phone-alert{border-radius:10px;background:#d1fff0;color:#08765c;font-size:11px;margin-top:16px;padding:8px;font-weight:900}
+.phone-tag{position:relative;z-index:1;color:white;font-weight:900;background:#ffffff2b;border:1px solid #ffffff61;padding:6px 16px;border-radius:99px}
+.phone-message{background:#fff;padding:36px;border:1px solid #e8e9fa;border-radius:27px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.focus-pill{font-size:13px;font-weight:900;color:#7250d3;background:#f0eaff;border-radius:99px;padding:5px 14px}
+.phone-message h3{font-size:clamp(24px,2.7vw,33px);line-height:1.5;margin:16px 0 7px}.phone-message p{color:#526482;line-height:2;margin:5px 0 15px}
+.phone-message-note{background:#fff3e6;color:#98511f;border-right:5px solid #ff9f46;padding:13px 16px;border-radius:12px;font-weight:800;margin-bottom:10px}
+.phone-risks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.risk-card{background:#fff;border:1px solid #e8eefa;padding:23px;border-radius:22px;box-shadow:0 13px 28px #2837750d;display:flex;flex-direction:column}
+.risk-card:nth-child(1){border-top:5px solid #ff6f95}.risk-card:nth-child(2){border-top:5px solid #7b66ee}.risk-card:nth-child(3){border-top:5px solid #24bbba}.risk-card:nth-child(4){border-top:5px solid #ffab5f}
+.risk-emoji{font-size:36px}.risk-card h3{font-size:17px;line-height:1.6;margin:12px 0 6px}.risk-card p{font-size:13px;line-height:1.95;color:#526482;margin:0 0 14px}
+.risk-action{margin-top:auto;border-radius:12px;background:#eafaf5;color:#147257;padding:10px;font-size:12px;font-weight:800;line-height:1.8}
+.phone-rule{margin-top:18px;background:linear-gradient(110deg,#3e35b8,#6c4de4);color:white;border-radius:18px;padding:19px 25px;box-shadow:0 12px 26px #4237be20;font-size:15px}
+.phone-rule strong{color:#ffe178}
+@media (max-width:1050px){.phone-risks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.phone-feature{grid-template-columns:1fr}.phone-risks{grid-template-columns:1fr}.phone-visual{min-height:365px}.phone-message{padding:26px}.team{grid-template-columns:1fr}}
+@media (max-width:720px){html{scroll-padding-top:126px}.container{width:min(100% - 30px,1160px)}.top .container{flex-wrap:wrap;padding-block:10px;gap:5px}.logo{font-size:14px}.logo-mark{width:35px;height:35px;font-size:19px}.nav{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}.nav a{white-space:nowrap}.top .mini-action{display:none}.hero-layout{grid-template-columns:1fr;padding-block:50px 64px;text-align:center}.hero-title{font-size:46px}.hero-desc{margin-inline:auto}.hero-actions,.hero-caption{justify-content:center}.hero-graphic{width:min(78%,360px);margin-top:12px}.hero-spark{display:none}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:17px 10px}.section{padding-top:54px}.intro,.challenge,.team{grid-template-columns:1fr}.topic-grid{grid-template-columns:1fr}.programs{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr}.gallery-card{min-height:215px}.answers{grid-template-columns:1fr}.footer-flex{flex-direction:column;align-items:flex-start}}
+@media (max-width:420px){.programs{grid-template-columns:1fr}.hero-title{font-size:39px}.hero-graphic{width:min(90%,320px)}.letter,.quiz-inner,.challenge-box{padding:21px}.topic-card{padding:21px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{.top,.hero-actions,.modal-overlay,.challenge,.quiz-zone,#readProgress,.footer button,.topic-card button{display:none!important}.hero{min-height:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hero-layout{min-height:300px}.section{padding:28px 0}.topic-grid{grid-template-columns:repeat(3,1fr)}.topic-card{break-inside:avoid}.program{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="readProgress" aria-hidden="true"></div>
+<header class="top"><div class="container">
+  <a class="logo" href="#home"><span class="logo-mark">✦</span><span>مجلة التوجيه الطلابي</span></a>
+  <nav class="nav" aria-label="القائمة الرئيسية">
+    <a href="#home" class="active">الرئيسية</a><a href="#editorial">كلمة الإدارة</a><a href="#topics">اقرأ وتعلّم</a><a href="#phone">الجوال بوعي</a><a href="#gallery">المعرض</a><a href="#quiz">المسابقة</a><a href="#team">فريق العمل</a>
+  </nav>
+</div></header>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-layout">
+    <div>
+      <span class="hero-badge">✨ العدد الأول · الفصل الدراسي الأول · 1448هـ</span>
+      <h1 class="hero-title">كل يوم <span>فرصة للتألّق!</span></h1>
+      <p class="hero-subtitle">مجلة التوجيه الطلابي | متوسطة عمر بن أبي سلمة</p>
+      <p class="hero-desc">اكتشف كيف تستخدم جوالك بذكاء، وتتجنب أخطاء التصوير والنشر والإفراط في الشاشة، وتبني عادات تدعم نجاحك.</p>
+      <div class="hero-actions"><a class="btn btn-sun" href="#topics">🚀 ابدأ الاستكشاف</a><a class="btn btn-outline" href="#quiz">📱 اختبر وعيك</a></div>
+      <div class="hero-caption"><span class="dot"></span><span>وعي رقمي • تفاعل • إلهام</span><span class="dot"></span><span>مجلة رقمية للمرحلة المتوسطة</span></div>
+    </div>
+    <svg class="hero-graphic" role="img" aria-label="رسم توضيحي لكتاب مفتوح ونجوم ومصباح وأدوات مدرسية" viewBox="0 0 540 515" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="sheet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e5efff"/></linearGradient><linearGradient id="cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6f9a"/><stop offset="1" stop-color="#ffb059"/></linearGradient><linearGradient id="blub" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff3a1"/><stop offset="1" stop-color="#ffd04b"/></linearGradient></defs>
+      <circle cx="270" cy="255" r="210" fill="#ffffff" opacity=".10"/><circle cx="270" cy="255" r="175" fill="#ffffff" opacity=".10"/>
+      <path d="M100 340C150 310 205 317 269 354C333 314 402 317 440 348V431C360 401 320 405 269 435C206 399 160 403 100 428Z" fill="#201b82" opacity=".4"/>
+      <path d="M104 295Q190 259 269 314V423Q184 370 104 401Z" fill="url(#sheet)" stroke="#c6d7ff" stroke-width="5"/>
+      <path d="M269 314Q356 261 434 297V401Q354 374 269 423Z" fill="#fff6fa" stroke="#ffd1e6" stroke-width="5"/>
+      <path d="M269 314V423" stroke="#8e91e8" stroke-width="7" stroke-linecap="round"/>
+      <path d="M135 320Q185 309 241 341M135 341Q185 328 241 360M298 342Q347 312 401 322M298 362Q348 336 401 344" fill="none" stroke="#bccaf0" stroke-width="8" stroke-linecap="round"/>
+      <rect x="163" y="164" width="129" height="151" rx="22" fill="#2e57e8" transform="rotate(-14 163 164)"/>
+      <rect x="168" y="164" width="129" height="151" rx="22" fill="url(#cover)" transform="rotate(-14 168 164)"/>
+      <path d="M186 235L270 215" stroke="#fff5e5" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+      <path d="M194 255L254 240" stroke="#fff5e5" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+      <circle cx="225" cy="199" r="19" fill="#ffe27f"/>
+      <path d="M218 201l7-18 7 18-7 7Z" fill="#f09347"/>
+      <path d="M336 145q-28 0-28 31c0 11 6 20 13 27v16h28v-16c7-7 13-16 13-27q0-31-26-31Z" fill="url(#blub)" stroke="#fff4ad" stroke-width="5"/>
+      <path d="M324 228h23M326 236h19" stroke="#e5ffff" stroke-width="7" stroke-linecap="round"/>
+      <path d="M335 122v-19M289 145l-15-14M384 145l16-14M301 191l-17 9M375 191l18 9" stroke="#ffe88b" stroke-width="7" stroke-linecap="round"/>
+      <path d="M408 242l11 26 29 2-22 17 7 29-25-17-24 17 7-29-23-17 30-2Z" fill="#ffe06b"/>
+      <circle cx="112" cy="170" r="9" fill="#a7ffe2"/><circle cx="449" cy="161" r="11" fill="#ff8daf"/><circle cx="91" cy="261" r="7" fill="#ffe173"/>
+      <path d="M130 110v32M114 126h32M440 105v30M425 120h30" stroke="#b6fff1" stroke-width="8" stroke-linecap="round"/>
+      <path d="M149 431l-21 19 31-5Z" fill="#ffd24c"/><path d="M381 437l24 18-30-4Z" fill="#ffa96b"/>
+      <path d="M196 462Q270 482 344 462" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+    </svg>
+  </div>
+  <span class="hero-spark one">✦</span><span class="hero-spark two">✧</span><span class="hero-spark three">✦</span>
+  <svg class="hero-wave" viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0 23 Q320 0 660 26 T1440 19 V50 H0Z"/></svg>
+</section>
+<div class="container"><div class="stats" aria-label="أقسام المجلة">
+  <div class="stat"><span class="v">06</span><small>موضوعات قيّمة</small></div><div class="stat"><span class="v">04</span><small>محطات إرشادية</small></div><div class="stat"><span class="v">05</span><small>أسئلة تنافسية</small></div><div class="stat"><span class="v">01</span><small>رسالة للتميّز</small></div>
+</div></div>
+<section class="section" id="editorial"><div class="container">
+  <p class="eyebrow">من إدارة المدرسة</p><h2 class="section-heading">كلمة تلهم مستقبلنا</h2><p class="section-sub">رسالة تربوية إلى كل طالب يطمح إلى تطوير ذاته واكتشاف قدراته.</p>
+  <div class="intro"><div class="letter"><p>أبناؤنا الطلاب، إن النجاح لا يقتصر على التفوق الدراسي، بل يشمل حسن الخلق، واحترام الآخرين، وتحمل المسؤولية، والمثابرة في مواجهة التحديات. نأمل أن تكون هذه المجلة مساحة معرفية تعزز السلوك الإيجابي، وتنمّي مهاراتكم، وتساعدكم على اتخاذ قرارات واعية في المدرسة والحياة.</p><div class="signature">عبدالله سعيد المالكي<small>مدير متوسطة عمر بن أبي سلمة</small></div></div>
+  <div class="editorial-aside"><div class="big">💡</div><h3>رسالتنا لك</h3><p>ليس المطلوب أن تكون الأفضل من الجميع؛ بل أن تتقدم خطوة عن نفسك بالأمس. ابدأ الآن، واصنع أثرًا جميلًا!</p><span style="background:#ffffff2b;border:1px solid #ffffff48;border-radius:999px;display:inline-block;padding:5px 15px;font-size:13px;font-weight:800">أنت قادر على التغيير 🌟</span></div></div>
+  <div class="note">تنبيه تحرير: كلمة المدير نص مقترح يحتاج إلى مراجعته واعتماده قبل النشر الرسمي.</div>
+</div></section>
+<section class="section" id="topics"><div class="container">
+  <p class="eyebrow">اقرأ واكتشف</p><h2 class="section-heading">مغامرتك المعرفية تبدأ هنا</h2><p class="section-sub">ستة موضوعات لحياتك المدرسية، بينها ملف خاص عن الاستخدام الخاطئ للجوال وآثاره. اضغط على البطاقة للقراءة.</p>
+  <div class="topic-grid">
+    <article class="topic-card" data-theme="yellow"><div class="iconbox">🌟</div><span class="number">الموضوع 01</span><h3>السلوك الإيجابي</h3><p>تصرفات صغيرة تجعل مدرستنا مكانًا أجمل للجميع.</p><button onclick="openTopic('behavior')">اكتشف المزيد ↗</button></article>
+    <article class="topic-card" data-theme="blue"><div class="iconbox">🎯</div><span class="number">الموضوع 02</span><h3>مهارات النجاح</h3><p>خطوات تساعدك على تنظيم وقتك والوصول إلى أهدافك.</p><button onclick="openTopic('success')">اكتشف المزيد ↗</button></article>
+    <article class="topic-card" data-theme="pink"><div class="iconbox">🧠</div><span class="number">الموضوع 03</span><h3>تنمية الدافعية</h3><p>كيف تستعيد حماسك حتى عندما تصبح الدراسة صعبة؟</p><button onclick="openTopic('motivation')">اكتشف المزيد ↗</button></article>
+    <article class="topic-card" data-theme="teal"><div class="iconbox">🛡️</div><span class="number">الموضوع 04</span><h3>الاستخدام الخاطئ للجوال</h3><p>التصوير والنشر والسهر والتشتت: تعرف على الأخطاء وكيف تتجنبها.</p><button onclick="openTopic('digital')">اكتشف المزيد ↗</button></article>
+    <article class="topic-card" data-theme="orange"><div class="iconbox">🤝</div><span class="number">الموضوع 05</span><h3>المرونة والتسامح</h3><p>كيف تتعامل مع الاختلاف وتجد حلولًا للخلافات؟</p><button onclick="openTopic('flexibility')">اكتشف المزيد ↗</button></article>
+    <article class="topic-card" data-theme="purple"><div class="iconbox">🇸🇦</div><span class="number">الموضوع 06</span><h3>الأمن الفكري</h3><p>فكر بوعي، تحقق من الأخبار، وعزز قيم الانتماء.</p><button onclick="openTopic('awareness')">اكتشف المزيد ↗</button></article>
+  </div>
+</div></section>
+<section class="section phone-section" id="phone"><div class="container">
+  <p class="eyebrow">الملف الرئيسي لهذا العدد</p>
+  <h2 class="section-heading">📱 الجوال: استخدمه بذكاء... ولا تدعه يتحكم بيومك!</h2>
+  <p class="section-sub">الجوال وسيلة مفيدة للتواصل والتعلم، لكن بعض التصرفات قد تسبب ضررًا لك أو لغيرك. تعرّف على مواقف من واقع الطلاب وكيف تتصرف بطريقة صحيحة.</p>
+  <div class="phone-feature">
+    <div class="phone-visual" aria-label="رسم توضيحي لجوال تظهر عليه تنبيهات الاستخدام الآمن">
+      <span class="phone-spark a">✦</span><span class="phone-spark b">✧</span>
+      <div class="phone-device"><div class="phone-speaker"></div><div class="phone-screen">
+        <div class="phone-symbol">📱</div>
+        <strong>فكّر قبل أن تضغط</strong>
+        <span>قبل التصوير • قبل النشر • قبل المشاركة</span>
+        <div class="phone-alert">🛡️ احمِ خصوصيتك وحقوق الآخرين</div>
+      </div></div>
+      <div class="phone-tag">✨ أنت تتحكم في وقتك</div>
+    </div>
+    <div class="phone-message">
+      <span class="focus-pill">تحدّي الوعي الرقمي</span>
+      <h3>هل كل ما يمكن تصويره يجوز نشره؟</h3>
+      <p>لا. احترام خصوصية الآخرين يبدأ من عدم تصويرهم أو نشر صورهم ومقاطعهم دون إذن، والالتزام بتعليمات المدرسة التي تمنع التصوير داخلها.</p>
+      <div class="phone-message-note">🚫 لا تصوّر داخل المدرسة، ولا تجعل المقالب أو المشاجرات محتوى للمشاركة.</div>
+      <a href="#quiz" class="btn btn-sun">🏆 اختبر وعيك الرقمي</a>
+    </div>
+  </div>
+  <div class="phone-risks">
+    <article class="risk-card"><span class="risk-emoji">📸</span><h3>التصوير والنشر دون إذن</h3><p>قد يضر بسمعة الآخرين وخصوصيتهم. لا تصوّر الطلاب أو المعلمين داخل المدرسة ولا تنشر مقاطعهم.</p><div class="risk-action">✅ البديل: احترم الخصوصية والتزم بالتعليمات.</div></article>
+    <article class="risk-card"><span class="risk-emoji">💬</span><h3>التنمر والسخرية عبر التطبيقات</h3><p>الكلمة الجارحة أو مشاركة مقطع مسيء قد تترك أثرًا كبيرًا، حتى لو قيلت على سبيل المزاح.</p><div class="risk-action">✅ البديل: لا تشارك الإساءة، واطلب المساعدة عند الحاجة.</div></article>
+    <article class="risk-card"><span class="risk-emoji">🌙</span><h3>السهر والاستخدام المفرط</h3><p>قضاء ساعات طويلة على الجوال، خاصة قبل النوم، قد يؤثر في جودة نومك ونشاطك الدراسي.</p><div class="risk-action">✅ البديل: خصص أوقاتًا بلا شاشة قبل النوم.</div></article>
+    <article class="risk-card"><span class="risk-emoji">🎮</span><h3>التشتت والألعاب وقت الدراسة</h3><p>الإشعارات والانتقال المستمر بين التطبيقات يقللان تركيزك ويؤخران إنجاز واجباتك.</p><div class="risk-action">✅ البديل: أوقف الإشعارات وأبعد الهاتف أثناء المذاكرة.</div></article>
+  </div>
+  <div class="phone-rule"><strong>قاعدة ذهبية:</strong> قبل أي تصوير أو إرسال أو نشر، اسأل نفسك: هل هذا مسموح؟ هل يحترم الآخرين؟ وهل سأرضى لو كان المحتوى عني؟</div>
+</div></section>
+<section class="section" id="gallery"><div class="container">
+  <p class="eyebrow">المعرض الإبداعي</p><h2 class="section-heading">لقطات من عالم التعلّم</h2><p class="section-sub">رسوم توضيحية مستوحاة من محاور المجلة، تُضفي على القراءة طابعًا بصريًا مشوقًا.</p>
+  <div class="gallery"><div class="gallery-card a"><span class="illustration">📚✨</span><div><strong>شغف القراءة والتعلّم</strong><small>كل صفحة تفتح فكرة جديدة</small></div></div><div class="gallery-card b"><span class="illustration">📱🛡️</span><div><strong>استخدم الجوال بوعي</strong><small>خصوصيتك ووقتك مسؤوليتك</small></div></div><div class="gallery-card c"><span class="illustration">🫶🌟</span><div><strong>قيم تصنع التميّز</strong><small>الاحترام والتعاون أساس النجاح</small></div></div></div>
+  <div class="gallery-foot">🖼️ هذه رسومات رمزية وليست صورًا فعلية للأنشطة أو الطلاب. يمكن إضافة الصور المدرسية المعتمدة لاحقًا بعد مراعاة التصاريح والخصوصية.</div>
+</div></section>
+<section class="section" id="challenge"><div class="container">
+  <p class="eyebrow">شارك بإيجابية</p><h2 class="section-heading">تحدي اليوم: اصنع فرقًا!</h2><p class="section-sub">اختر مهمة بسيطة تنفذها اليوم، ثم ابدأ بها على أرض الواقع.</p>
+  <div class="challenge"><div class="challenge-copy"><h3>التغيير يبدأ بخطوة</h3><p>أفعال بسيطة مثل مساعدة زميل، أو تنظيم وقتك، أو قول كلمة طيبة؛ يمكنها أن تترك أثرًا كبيرًا.</p><strong>أي تحدٍ ستختار اليوم؟</strong></div><div class="challenge-box"><div class="challenge-options"><button onclick="chooseChallenge(this)">🤝 سأساعد زميلًا يحتاج إلى دعم.</button><button onclick="chooseChallenge(this)">📵 سأذاكر نصف ساعة دون جوال.</button><button onclick="chooseChallenge(this)">💬 سأعبّر عن رأيي باحترام.</button></div><div id="challengeFeedback" aria-live="polite"></div></div></div>
+</div></section>
+<section class="section" id="quiz"><div class="container">
+  <p class="eyebrow">الركن التفاعلي</p><h2 class="section-heading">اختبر وعيك في استخدام الجوال 🏆</h2><p class="section-sub">خمسة مواقف واقعية عن الجوال والتصوير والخصوصية. اختر التصرف الصحيح وشاهد نتيجتك فورًا!</p>
+  <div class="quiz-zone"><div class="quiz-inner" id="quizGame"><div id="quizQuestionView"><div class="quiz-head"><span id="qCount">السؤال 1 من 5</span><span id="qScore">النقاط: 0</span></div><div class="quiz-track"><div id="quizFill" class="quiz-fill"></div></div><h3 id="qTitle"></h3><div class="answers" id="answers"></div><div id="feedback" aria-live="polite"></div><button class="btn" id="nextBtn" onclick="nextQuestion()">السؤال التالي ←</button></div><div class="result" id="quizResult"><div class="result-icon" id="resultIcon">🏆</div><h3 id="resultTitle"></h3><p id="resultText"></p><button class="btn btn-sun" onclick="resetQuiz()">🔁 أعد المحاولة</button></div></div></div>
+</div></section>
+<section class="section" id="team"><div class="container">
+  <p class="eyebrow">صنّاع هذا العدد</p><h2 class="section-heading">فريق المجلة</h2><p class="section-sub">بجهود إدارة المدرسة ووكيل شؤون الطلاب وفريق التوجيه الطلابي.</p>
+  <div class="team"><div class="team-card"><span class="role">مدير المدرسة</span><h3>عبدالله سعيد المالكي</h3></div><div class="team-card"><span class="role">وكيل شؤون الطلاب</span><h3>عبدالخالق بن محمد بن العمري</h3></div><div class="team-card"><span class="role">الموجهون الطلابيون</span><div class="names"><span>فهد محمد الحربي</span><span>فيصل نايف العتيبي</span><span>علي راجح الشهراني</span></div></div></div>
+</div></section>
+</main>
+<footer class="footer"><div class="container footer-flex"><div><h3>✦ مجلة التوجيه الطلابي | متوسطة عمر بن أبي سلمة</h3><p>العدد الأول · الفصل الدراسي الأول · 1448هـ</p><small>معرفة تبني شخصية، وقيم تصنع مستقبلًا.</small></div><button onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ العودة للبداية</button></div></footer>
+<div class="modal-overlay" id="topicOverlay" aria-hidden="true" onclick="if(event.target===this)closeTopic()"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" onclick="closeTopic()" aria-label="إغلاق الموضوع">✕ إغلاق</button><div class="modal-icon" id="modalIcon">📖</div><h2 id="modalTitle"></h2><div class="modal-content" id="modalContent"></div><button class="btn btn-sun" onclick="closeTopic()">✓ انتهيت من القراءة</button></div></div>
+<script>
+'use strict';
+const topics={
+behavior:{title:'السلوك الإيجابي',icon:'🌟',content:'<p>السلوك الإيجابي ليس شعارًا، بل تصرفات نمارسها كل يوم في المدرسة وخارجها.</p><ul><li>احترم معلميك وزملاءك، واختر كلمات مهذبة.</li><li>حافظ على ممتلكات المدرسة ومرافقها.</li><li>ساعد من يحتاج إلى دعم، وابتعد عن السخرية والتنمر.</li><li>عند الخلاف، تحدث بهدوء واستعن بالشخص المناسب عند الحاجة.</li></ul><p><strong>تطبيق عملي:</strong> قدّم هذا الأسبوع مبادرة إيجابية واحدة دون انتظار مقابل.</p>'},
+success:{title:'مهارات تعزيز النجاح',icon:'🎯',content:'<p>النجاح لا يحدث مصادفة؛ بل يتشكل من عادات صغيرة مستمرة.</p><ul><li>اختر هدفًا واحدًا واضحًا وقابلًا للإنجاز هذا الأسبوع.</li><li>خصص وقتًا ثابتًا للمذاكرة وابتعد عن المشتتات.</li><li>قسّم المهام الكبيرة إلى خطوات قصيرة.</li><li>اسأل معلمك عن أي نقطة غير واضحة، وراجع أخطاءك لتتعلم منها.</li></ul><p><strong>تطبيق عملي:</strong> اكتب أهم ثلاث مهام لليوم التالي وحدد موعد إنجازها.</p>'},
+motivation:{title:'تنمية الدافعية',icon:'🧠',content:'<p>من الطبيعي أن يتغير الحماس، لكن التقدم ممكن حتى عندما لا نشعر بالرغبة في البدء.</p><ul><li>ابدأ بمهمة صغيرة لمدة عشر دقائق.</li><li>ذكّر نفسك بالهدف الذي تتعلم من أجله.</li><li>لاحظ إنجازاتك البسيطة ولا تقارن نفسك باستمرار بالآخرين.</li><li>اطلب الدعم عندما تواجه صعوبة بدل الاستسلام.</li></ul><p><strong>تطبيق عملي:</strong> اختر مادة تحتاج إلى تحسين وابدأ فيها بخطوة بسيطة اليوم.</p>'},
+digital:{title:'الاستخدام الخاطئ للجوال',icon:'📱',content:'<p>الجوال أداة مفيدة عندما نستخدمه بوعي، لكن بعض التصرفات تتحول إلى مشكلة حقيقية.</p><ul><li><strong>التصوير داخل المدرسة:</strong> لا تصوّر الطلاب أو المعلمين أو المشاجرات، ولا تنشر صورًا أو مقاطع للآخرين دون إذن. التزم بتعليمات المدرسة.</li><li><strong>السخرية والتنمر:</strong> لا تنشر الإساءات أو الشائعات في المجموعات، ولا تتفاعل مع الحسابات التي تسيء إلى الآخرين.</li><li><strong>إدمان التصفح:</strong> إذا استهلك الجوال وقت نومك ومذاكرتك وعلاقاتك، فابدأ بتنظيم أوقات استخدامه واطلب مساعدة الأسرة عند الحاجة.</li><li><strong>الألعاب والرسائل وقت الدراسة:</strong> أبعد الجوال وأوقف الإشعارات حتى تنهي مهمتك.</li><li><strong>روابط مشبوهة:</strong> لا تفتح روابط غير موثوقة أو تشارك بياناتك أو كلمات المرور.</li></ul><p><strong>ماذا لو وصلتك إساءة أو تهديد؟</strong> لا ترد بالإساءة ولا تعِد النشر؛ احتفظ بالدليل وأبلغ ولي أمرك أو الموجه الطلابي.</p><p><strong>تطبيق عملي:</strong> جرّب تخصيص 30 دقيقة للمذاكرة دون جوال، واختر وقتًا ثابتًا لإيقاف الشاشة قبل النوم.</p>'},
+flexibility:{title:'المرونة والتسامح',icon:'🤝',content:'<p>المرونة تعني القدرة على التكيف مع التغيير، والتسامح يساعد على بناء علاقات صحية دون التنازل عن الحقوق.</p><ul><li>استمع للآخرين حتى إن اختلفت معهم.</li><li>تعامل مع الخطأ بوصفه فرصة للتعلم.</li><li>استخدم الحوار بدل الغضب أو الإساءة.</li><li>ابحث عن حل عادل عندما تتعارض الآراء.</li></ul><p><strong>تطبيق عملي:</strong> في موقف مزعج، جرّب الاستماع أولًا ثم الرد باحترام.</p>'},
+awareness:{title:'الأمن الفكري',icon:'🇸🇦',content:'<p>الأمن الفكري يرتبط بالتفكير الواعي والقدرة على التمييز بين الخبر الصحيح والمضلل، مع المحافظة على قيم الاحترام والانتماء.</p><ul><li>ابحث عن المصدر الموثوق قبل تصديق الأخبار أو مشاركتها.</li><li>احذر المحتوى المحرّض على العنف أو الكراهية.</li><li>ناقش الأفكار بالحجة والأدب دون إساءة إلى الآخرين.</li><li>استعن بأسرتك ومعلميك عندما تصادف محتوى مقلقًا أو مشبوهًا.</li></ul><p><strong>تطبيق عملي:</strong> قبل مشاركة أي خبر، اسأل: من مصدره؟ وما الدليل عليه؟</p>'}
+};
+let previousFocus=null;
+function openTopic(id){const t=topics[id];if(!t)return;previousFocus=document.activeElement;document.getElementById('modalIcon').textContent=t.icon;document.getElementById('modalTitle').textContent=t.title;document.getElementById('modalContent').innerHTML=t.content;const overlay=document.getElementById('topicOverlay');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('closeModal').focus()}
+function closeTopic(){const overlay=document.getElementById('topicOverlay');overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';if(previousFocus)previousFocus.focus()}
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.getElementById('topicOverlay').classList.contains('open'))closeTopic();if(event.key==='Tab'&&document.getElementById('topicOverlay').classList.contains('open')){const elements=[...document.getElementById('topicOverlay').querySelectorAll('button')];if(event.shiftKey&&document.activeElement===elements[0]){event.preventDefault();elements[elements.length-1].focus()}else if(!event.shiftKey&&document.activeElement===elements[elements.length-1]){event.preventDefault();elements[0].focus()}}});
+function chooseChallenge(button){document.querySelectorAll('.challenge-options button').forEach(b=>{b.classList.remove('selected');b.setAttribute('aria-pressed','false')});button.classList.add('selected');button.setAttribute('aria-pressed','true');document.getElementById('challengeFeedback').textContent='رائع! اخترت تحديك. حوّل القرار إلى عمل اليوم 🌟'}
+const questions=[
+{q:'رأيت مشاجرة داخل المدرسة. ما التصرف الصحيح؟',options:['أصوّرها وأنشرها','أرسل المقطع للمجموعة','أبتعد عن التصوير وأبلغ المسؤول المناسب','أشارك المقطع على سبيل المزاح'],correct:2,explain:'التصوير والنشر قد يسيئان للآخرين؛ التزم بتعليمات المدرسة واطلب المساعدة.'},
+{q:'نشر أحدهم صورة محرجة لزميلك. ما الأفضل؟',options:['أعيد نشرها للضحك','لا أنشرها وأبلغ شخصًا بالغًا موثوقًا','أضيف تعليقًا ساخرًا','أرسلها إلى مجموعة أكبر'],correct:1,explain:'احترام الخصوصية وعدم المشاركة في الإساءة هو التصرف الصحيح.'},
+{q:'أثناء المذاكرة، كيف تقلل تشتت الجوال؟',options:['أفتح كل إشعار فورًا','أشاهد مقاطع قصيرة بين كل سطر','أضع الهاتف بجانب الكتاب والإشعارات مفعلة','أوقف الإشعارات وأبعد الجوال حتى أنهي المهمة'],correct:3,explain:'تقليل الإشعارات والبعد عن الهاتف يساعدان على التركيز.'},
+{q:'تسهر كل ليلة على الجوال وتصل المدرسة مرهقًا. ماذا تفعل؟',options:['أنظم وقت الشاشة وأخفف استخدامها قبل النوم','أزيد وقت اللعب','أواصل السهر دون تغيير','أستخدم أكثر من جهاز'],correct:0,explain:'تنظيم وقت الجوال يساعد على الحفاظ على النوم والنشاط.'},
+{q:'وصلتك رسالة مسيئة أو تهديد على تطبيق. كيف تتصرف؟',options:['أهدد المرسل','أنشر المحادثة للجميع','أحتفظ بالدليل وأخبر ولي أمري أو الموجه الطلابي','أتبع تعليمات المرسل دون إخبار أحد'],correct:2,explain:'لا تواجه التهديد وحدك؛ احتفظ بالأدلة واطلب المساعدة من شخص موثوق.'}
+];
+let qIndex=0,score=0,answered=false;
+function renderQuestion(){const q=questions[qIndex];answered=false;document.getElementById('qCount').textContent=`السؤال ${qIndex+1} من ${questions.length}`;document.getElementById('qScore').textContent=`النقاط: ${score}`;document.getElementById('quizFill').style.width=`${(qIndex+1)*100/questions.length}%`;document.getElementById('qTitle').textContent=q.q;const area=document.getElementById('answers');area.innerHTML='';document.getElementById('feedback').textContent='';document.getElementById('nextBtn').style.display='none';q.options.forEach((option,index)=>{const btn=document.createElement('button');btn.textContent=option;btn.onclick=()=>answerQuestion(index);area.appendChild(btn)})}
+function answerQuestion(selected){if(answered)return;answered=true;const q=questions[qIndex];const buttons=[...document.querySelectorAll('#answers button')];buttons.forEach((button,index)=>{button.disabled=true;if(index===q.correct)button.classList.add('correct');if(index===selected&&selected!==q.correct)button.classList.add('wrong')});if(selected===q.correct)score++;document.getElementById('qScore').textContent=`النقاط: ${score}`;document.getElementById('feedback').textContent=(selected===q.correct?'✅ أحسنت! ':'💡 لنستفد من الخطأ: ')+q.explain;document.getElementById('nextBtn').textContent=qIndex===questions.length-1?'🏆 اعرض نتيجتي':'السؤال التالي ←';document.getElementById('nextBtn').style.display='inline-flex'}
+function nextQuestion(){if(!answered)return;if(qIndex<questions.length-1){qIndex++;renderQuestion()}else{document.getElementById('quizQuestionView').style.display='none';const result=document.getElementById('quizResult');result.style.display='block';document.getElementById('resultIcon').textContent=score===5?'🏆':score>=3?'🌟':'💪';document.getElementById('resultTitle').textContent=`حصلت على ${score} من ${questions.length}`;document.getElementById('resultText').textContent=score===5?'إجابات كاملة! واصل هذا التميز.':score>=3?'عمل رائع! يمكنك إعادة التحدي لتحقق نتيجة أعلى.':'أحسنت بالمشاركة! اقرأ موضوعات المجلة ثم جرب مجددًا.'}}
+function resetQuiz(){qIndex=0;score=0;document.getElementById('quizResult').style.display='none';document.getElementById('quizQuestionView').style.display='block';renderQuestion()}
+renderQuestion();
+const progressEl=document.getElementById('readProgress');
+let ticking=false;
+window.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;progressEl.style.width=(max>0?Math.min(100,Math.max(0,scrollY/max*100)):100)+'%';ticking=false})},{passive:true});
+if('IntersectionObserver' in window){const sections=[...document.querySelectorAll('main section[id]')];const links=[...document.querySelectorAll('.nav a')];const obs=new IntersectionObserver(entries=>{const active=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(active){links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+active.target.id))}},{rootMargin:'-22% 0px -62% 0px',threshold:0});sections.forEach(section=>obs.observe(section))}
+</script>
+</body>
+</html>
